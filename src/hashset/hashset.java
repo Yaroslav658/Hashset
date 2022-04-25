@@ -5,14 +5,8 @@ import java.util.Set;
 
 public class hashset {
 
-//Расписать понимание хешкода, начиная с класса Object.
-
-// if (a==null) return 0;
-//        Set<Object> set = new HashSet<>();
-
 
     public static void main(String[] args) {
-//        Set<Object> set = new HashSet<>();
         Object object = new Object();
         System.out.println(object.hashCode());
         Object object2 = new Object();
@@ -22,11 +16,15 @@ public class hashset {
         System.out.println(object3.hashCode());
         System.out.println(object.equals(object2));
 
-
-
-
-
-
+        user user1 = new user("Volodymyr", "17.03.2022", 1);
+        user user2 = new user("Evgeniy", "28.02.2022", 2);
+        user user3 = new user("Gennadiy", "11.01.2022", 3);
+        user user4 = new user("Gennadiy", "11.01.2022", 3);
+        System.out.println("\n");
+        System.out.println(user1.hashCode());
+        System.out.println(user2.hashCode());
+        System.out.println(user3.hashCode());
+        System.out.println(user4.hashCode());
     }
 }
 
@@ -37,6 +35,14 @@ public class hashset {
     Boolean subscription;
     Double balance;
     int ip;
+    static int LastIP=0;
+
+     public user(String name, String registrationDate, int ip) {
+         this.name = name;
+         this.registrationDate = registrationDate;
+         this.ip = ip;
+         LastIP++;
+     }
 
      @Override
      public boolean equals(Object o) {
@@ -61,24 +67,4 @@ public class hashset {
 
 
 
-//        ⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⠄⠄⠄⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⠄⠄⠄⣀⣶⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣇⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⠄⠄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡦⠄⠄⠄⠄⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⠄⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠄⠄⠄⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠄⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠛⠉⠛⠁⠈⠈⠻⣿⣿⠄⠄⠄⠄⠄⠄
-//        ⠄⠄⢰⣿⣿⣿⠛⠿⠿⠛⠋⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⣿⡆⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⣿⣿⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡇⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⠸⣿⡇⠄⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⠄⠄⠄⠄⢻⣀⣠⢤⣤⡀
-//        ⠄⠄⠄⠄⢹⡇⠄⠄⠄⠄⠄⠄⠄⠄⠐⣤⣴⣾⣿⣿⢶⡄⠄⠄⢀⠴⠇⠄⠸⣷
-//        ⠄⢀⣀⣀⣼⡅⢴⣶⣶⣿⣷⣿⣿⠏⠄⠄⠙⠿⠽⠋⠄⠄⠄⠄⠋⢰⣦⠄⢀⡏
-//        ⢰⣿⡟⢹⣿⡆⠙⠛⠛⠟⠃⠛⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⠃⡼⠄
-//        ⠐⣾⡆⣾⣿⡇⠄⠄⠄⠄⠄⢸⣷⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠜⠁⠄
-//        ⠄⠘⣧⢿⡿⣿⡄⠄⠄⠄⠄⣼⣿⣶⣄⠠⣤⠄⠄⠄⠄⠄⠄⠄⡔⠖⠋⠄⠄⠄
-//        ⠄⠄⠹⣛⡓⠾⣿⣧⠄⠄⠄⠈⢹⣿⡛⡀⠄⠄⠄⠄⠄⠄⠄⢀⠃⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⠄⠉⠉⠉⢹⠄⠄⠄⣠⣾⣿⣷⣤⠤⠤⠤⠄⠄⠄⠄⡸⠄⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⠄⠄⠄⠄⠘⣧⣄⠘⠿⣿⣧⣀⣄⣄⡀⠄⠄⠄⢀⠞⠁⠄⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⠄⠄⠄⠄⠄⠙⢷⣄⠄⠄⠉⠉⠉⠁⠄⢀⣀⠴⠃⠄⠄⠄⠄⠄⠄⠄⠄
-//        ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠓⠶⠶⠶⠶⠖⠚⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
 

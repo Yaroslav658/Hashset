@@ -13,12 +13,15 @@ public class hashset {
 //        Set<Object> set = new HashSet<>();
         Object object = new Object();
         Object object2 = new Object();
+        Object object3 = new Object();
+        object3 = object2;
         int set;
         int set2;
+        int set3;
         set = object.hashCode();
         set2 = object2.hashCode();
-        System.out.println(set);
-        System.out.println(set2);
+        set3 = object3.hashCode();
+        System.out.println(set+"\n"+set2+"\n"+set3);
 
 
 
